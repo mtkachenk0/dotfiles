@@ -1,1 +1,13 @@
-../.gitconfig
+[push]
+	default = current
+[user]
+	name = Maxim Tkachenko
+	email = tkacenko.maxim@gmail.com
+[fetch]
+	prune = true
+[diff]
+	tool = vimdiff
+[alias]
+	edit = !$EDITOR $(git status --short | awk '$1 ~ /^M|A|U/ {print $2}' )
+[core]
+	ignorecase = false
