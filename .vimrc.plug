@@ -1,35 +1,45 @@
 call plug#begin('~/.vim/plugged')
 
+Plug 'morhetz/gruvbox'        " gruvbox colorscheme
+
 "Fugitive Vim Github Wrapper
 Plug 'tpope/vim-fugitive'
-Plug 'altercation/vim-colors-solarized'
+" Finders
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+
 Plug 'tpope/vim-unimpaired'   " awesome pair mappings
 Plug 'tpope/vim-endwise'      " auto-add end statements in the code
 Plug 'tomtom/tcomment_vim'    " Comment code
 Plug 'airblade/vim-gitgutter' " git diff visualizer
-Plug 'morhetz/gruvbox'        " gruvbox colorscheme
-Plug 'godlygeek/tabular'
+Plug 'godlygeek/tabular'		  " awesome!!! alignments
 Plug 'foosoft/vim-argwrap'
 Plug 'thoughtbot/vim-rspec'
+
 Plug 'pechorin/any-jump.vim'
+Plug 'francoiscabrol/ranger.vim' " File manager
+
 Plug 'andymass/vim-matchup'   " extend vim's % key
 Plug 'tpope/vim-rails'        " adds easy way to regenerate tags
 Plug 'tpope/vim-rbenv'        " provides path support for rbenv ruby files
-Plug 'ludovicchabant/vim-gutentags' " TAGS, TAGS, TAGS
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'maxmellon/vim-jsx-pretty'
-Plug 'preservim/nerdtree'
 Plug 'tpope/vim-dispatch' " execute blocking commands right in vim window
 Plug 'vim-airline/vim-airline' " usefull statusbar
-Plug 'brooth/far.vim'					 " Find And Replace
-Plug 'Ivo-Donchev/vim-react-goto-definition'
+" Plug 'Ivo-Donchev/vim-react-goto-definition'
 Plug 'dense-analysis/ale' " Async Linter
-Plug 'vim-scripts/ShowMarks' " Show set marks
+" Plug 'eslint/eslint'
 Plug 'flowtype/vim-flow' " JS Flow
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Plug 'prabirshrestha/vim-lsp'
-" Plug 'mattn/vim-lsp-settings'
-" Plug 'tpope/vim-bundler'      " read tags from gems, sets the location of tags
+Plug 'leafgarland/typescript-vim'
+Plug 'pangloss/vim-javascript'
+Plug 'maxmellon/vim-jsx-pretty'
+
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/playground'
+Plug 'hrsh7th/nvim-compe'
+" dependencies
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+" telescope
+Plug 'nvim-telescope/telescope.nvim'
 call plug#end()

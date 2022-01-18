@@ -101,7 +101,9 @@ eval "$(rbenv init -)"
 export LC_ALL=en_US.UTF-8
 alias bes="bundle exec sidekiq -C config/sidekiq.example.yml"
 alias be="bundle exec"
-alias nvim="~/Applications/nvim-osx64/bin/nvim"
+
+alias nvim="~/Downloads/nvim-osx64/bin/nvim"
+alias vim="nvim"
 alias gitlab-runner="/usr/local/Cellar/gitlab-runner/13.6.0/bin/gitlab-runner"
 alias ports="lsof -PiTCP -sTCP:LISTEN"
 alias f="grep --exclude-dir='tmp' --exclude-dir='public' -rnw '.' -e $1"
@@ -149,7 +151,7 @@ export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat 
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.DS_Store,.git,node_modules,tmp,vendor,venv,__pycache__}/*" 2> /dev/null'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
-export EDITOR="vim"
+export EDITOR="nvim"
 #ctags=/usr/local/bin/ctags
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
@@ -159,5 +161,9 @@ if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
     tmux attach -t default || tmux new -s default
 fi
 export PATH="/usr/local/opt/postgresql@10/bin:$PATH"
+
+function gch() {
+ git checkout "$(git branch | fzf| tr -d '[:space:]')"
+}
 
 . /usr/local/opt/asdf/asdf.sh
